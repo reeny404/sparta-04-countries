@@ -34,7 +34,7 @@ function App() {
   );
 
   return (
-    <main className="flex flex-col justify-center items-center bg-slate-200">
+    <main className="flex flex-col justify-center items-center bg-slate-200 min-h-screen">
       <section className="max-w-[1000px]">
         <h3 className="text-md font-bold text-center p-4">
           Favorite Countires
