@@ -1,30 +1,13 @@
-# React + TypeScript + Vite
+## 🔥 필수 구현 사항 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- [x]  vite, react, typescript 기반의 프로젝트를 시작합니다.
+- [x]  제공된 API 를 호출하는 로직을 작성하고 적절한 타입을 사용합니다.
+- [x]  API 의 응답 값을 컴포넌트에서 useState 를 이용해 상태관리를 해줍니다. 적절한 타입이 꼭 명시되어야 합니다.
+- [x]  useState 에서 상태관리되고 있는 값들을 화면에 보여주고, 사용자와 인터렉션 (선택/해제) 가 가능하도록 합니다. 이 과정에서 적절한 타입이 명시되어 있는 함수를 사용하도록 합니다.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 💪 선택 구현 사항 : 
+필수 구현 사항을 모두 완료하고 나서 여유가 되신다면 시도해 보세요! 꼭 순서대로 하시지 않으셔도 괜찮습니다.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- [x]  보여준 데이터를 Sort 할 수 있는 함수들을 작성해보세요.
+- [ ]  Supabase 에 선택되어 있는 나라들을 저장 할 수 있는 로직을 작성해봅시다. 단, API 에서 받아온 데이터는 필요없는 데이터도 많은 것 같아요. 우리가 필요한 정보들만 따로 모아서 새로운 Country 타입을 설정하고 그 값을 저장하도록 합시다.

@@ -5,6 +5,7 @@ import { Country } from "./types/Country";
 
 function App() {
   const [countries, setCountries] = useState<Country[]>([]);
+  const [isSort, setIsSort] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -27,24 +28,45 @@ function App() {
     [countries]
   );
 
+  const handleClickSort = () => setIsSort(!isSort);
+  const unSelectedCountries = countries.filter(
+    (country) => !country.isSelected
+  );
+
   return (
     <main className="flex flex-col justify-center items-center bg-slate-200">
-      <section>
+      <section className="max-w-[1000px]">
         <h3 className="text-md font-bold text-center p-4">
           Favorite Countires
         </h3>
-        <div className="max-w-[1000px]">
+        <div>
           <CountryList
             countries={countries.filter((country) => country.isSelected)}
             onClick={handleOnClick}
           />
         </div>
       </section>
-      <section>
+      <section className="max-w-[1000px]">
         <h3 className="text-lg font-bold text-center p-4">Countries</h3>
-        <div className="max-w-[1000px]">
+        <div>
+          <div className="flex justify-start p-2">
+            <span
+              className={`py-1 px-4 rounded-full ${
+                isSort ? "bg-slate-600 text-white" : "bg-slate-50"
+              }`}
+              onClick={handleClickSort}
+            >
+              sort by: a-z
+            </span>
+          </div>
           <CountryList
-            countries={countries.filter((country) => !country.isSelected)}
+            countries={
+              isSort
+                ? unSelectedCountries.sort((a, b) =>
+                    a.name.common.localeCompare(b.name.common)
+                  )
+                : unSelectedCountries
+            }
             onClick={handleOnClick}
           />
         </div>
